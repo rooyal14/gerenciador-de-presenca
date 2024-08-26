@@ -48,16 +48,18 @@ class Usuario {
 
     // Delete
     static function deleteUsuario($id) {
-        $sql = "DELETE FROM `Usuario` WHERE `idUsuario` = $id;";
+        $sql = "DELETE FROM `Usuario` WHERE `id` = $id;";
         return DbController::query($sql);
     }
 
     // Login
     static function login($id, $senha) {
-        $sql = "SELECT * FROM `Usuario` WHERE `id` = '$id'";
+        $sql = "SELECT * FROM `Usuario` WHERE `id` = '$id';";
         $query = DbController::query($sql);
         $row = $query -> fetch_object();
-        return $row ? new Usuario($row -> nome, $row -> idFuncao) : null;
+        return password_verify($senha, $row -> senha) 
+            ? new Usuario($row -> nome, $row -> idFuncao) 
+            : null;
     }
 
 
