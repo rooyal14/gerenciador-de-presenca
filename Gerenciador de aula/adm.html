@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="style/adm_style.css">
 
       <title>Adm Home page</title>
-   </head>
+   </head>   
     <body>
        <!--=============== HEADER ===============-->
        <header class="header">
@@ -24,11 +24,86 @@
           </nav>
        </header>
       <!--=============== MAIN ===============-->
-      <main>
-        
+      <main class="main">
+        <section class="main_box">
+         <div class="aluno__box">
+            <p>Aluno</p>
+            <button class="btn_cadastrar">Cadastrar</button>
+            <br>
+            <table id="listar-aluno" class="display">
+               <thead>
+                  <tr>
+                     <th>Nome</th>
+                     <th>Matrícula</th>
+                     <th>Email</th>
+                     <th>Contato</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Rodrigo</td>
+                     <td>23</td>
+                     <td>sagd@gmail.com</td>
+                     <td>69 99257-2637</td>
+                  </tr>
+                  <tr>
+                     <td>Rodrigo</td>
+                     <td>23</td>
+                     <td>sagd@gmail.com</td>
+                     <td>69 99257-2637</td>
+                  </tr>
+                  <tr>
+                     <td>Rodrigo</td>
+                     <td>23</td>
+                     <td>sagd@gmail.com</td>
+                     <td>69 99257-2637</td>
+                  </tr>
+                  <tr>
+                     <td>Rodrigo</td>
+                     <td>23</td>
+                     <td>sagd@gmail.com</td>
+                     <td>69 99257-2637</td>
+                  </tr>
+               </tbody>
+            </table>
+            <br><br>
+         </div>
+         
+         <div class="professor__box">
+            <p>Professor</p>
+            <button class="btn_cadastrar">Cadastrar</button>
+            <table id="listar-professor" class="display">
+               <thead>
+                  <tr>
+                     <th>Nome</th>
+                     <th>Matrícula</th>
+                     <th>Email</th>
+                     <th>Contato</th>
+                  </tr>
+               </thead>
+            </table>
+            <br><br>
+         </div>
+         
+         <div class="materia__box">
+            <p>Matéria</p>
+            <button class="btn_cadastrar">Cadastrar</button>
+            <table id="listar-mateia" class="display">
+               <thead>
+                  <tr>
+                     <th>Nome</th>
+                     <th>ID</th>
+                     <th>Professor Responsável</th>
+                     <th>Carga Horária</th>
+                     <th>Turno</th>
+                  </tr>
+               </thead>
+            </table>
+         </div>
+        </section>
       </main> 
 
     <!--MAIN JS-->
-  <script src="JS/adm.js"></script>
+    <script src="JS/adm.js"></script>
 </body>
 </html>

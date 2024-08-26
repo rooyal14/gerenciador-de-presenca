@@ -57,6 +57,12 @@ a {
   text-decoration: none;
 }
 
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
@@ -96,6 +102,39 @@ a {
   font-size: 1.25rem;
 }
 
+/*=============== MAIN ===============*/
+.main{
+  margin-top: 70px;
+}
+.aluno__box, .professor__box, .materia__box{
+  margin-left: 1.8rem;
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+  font-weight: var(--font-semi-bold);
+}
+.btn_cadastrar{
+  border: none;
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .3s;
+  border-radius: 5px;
+  background-color: var(--black-color-lighten);
+  outline: none;
+  color: #fff;
+  font-family: var(--font-regular);
+}
+.btn_cadastrar:hover{
+  background-color: var(--black-color);
+}
+.btn_cadastrar:active{
+  color:  #dddddd;;
+  background-color: var(--black-color-lighten);
+}
+table{
+  
+}
 /*.form-container {
   display: none;
   margin-top: 20px;
