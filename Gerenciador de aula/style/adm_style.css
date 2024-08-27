@@ -16,7 +16,7 @@
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", sans-serif;
-  --normal-font-size: .938rem;
+  --normal-font-size: 1.25rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -56,12 +56,6 @@ ul {
 a {
   text-decoration: none;
 }
-
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -103,19 +97,33 @@ table, th, td {
 }
 
 /*=============== MAIN ===============*/
-.main{
-  margin-top: 70px;
-}
-.aluno__box, .professor__box, .materia__box{
-  margin-left: 1.8rem;
-  display: flex;
-  align-items: center;
-  column-gap: .25rem;
-  font-weight: var(--font-semi-bold);
-}
+  .main{
+    margin-top: 70px;
+    margin-right: 25px;
+
+  }
+  .aluno__box, .professor__box, .materia__box{
+    margin-left: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem; 
+    font-weight: var(--font-semi-bold);
+  }
+  .container_data{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+  }
+  .container_table{
+    justify-content: space-between;
+  }
+  p{
+    font-family: var(--normal-font-size);
+    font-size: var(--normal-font-size);
+  }
 .btn_cadastrar{
   border: none;
-  padding: 10px;
+  padding: 6px;
   text-decoration: none;
   cursor: pointer;
   transition: background .3s;
@@ -123,12 +131,35 @@ table, th, td {
   background-color: var(--black-color-lighten);
   outline: none;
   color: #fff;
-  font-family: var(--font-regular);
+  font-family: var(--font-regular);  
 }
 .btn_cadastrar:hover{
   background-color: var(--black-color);
 }
 .btn_cadastrar:active{
+  color:  #dddddd;;
+  background-color: var(--black-color-lighten);
+}
+.btn_editar, .btn_deletar{
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+  transition: background .3s;
+  cursor: pointer;
+}
+.btn_editar:hover{
+  background-color: var(--black-color);
+  color: #fff;
+}
+.btn_editar:active{
+  color:  #dddddd;;
+  background-color: var(--black-color-lighten);
+}
+.btn_deletar:hover{
+  background-color: var(--black-color);
+  color: #fff;
+}
+.btn_deletar:active{
   color:  #dddddd;;
   background-color: var(--black-color-lighten);
 }
