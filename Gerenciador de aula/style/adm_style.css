@@ -71,7 +71,7 @@ table, th, td {
 
 /*=============== HEADER ===============*/
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -132,9 +132,7 @@ table, th, td {
   color:  #dddddd;;
   background-color: var(--black-color-lighten);
 }
-table{
-  
-}
+
 /*.form-container {
   display: none;
   margin-top: 20px;
