@@ -133,6 +133,9 @@ table, th, td {
   background-color: var(--black-color-lighten);
 }
 
+/* .form-usuario {
+  display: none;
+} */
 /*.form-container {
   display: none;
   margin-top: 20px;

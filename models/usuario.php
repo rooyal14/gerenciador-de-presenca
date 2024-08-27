@@ -25,13 +25,21 @@ class Usuario {
     
     // Read (Retrieve a user by ID)
     static function getUsuarioById($id) {
-        $sql = "SELECT * FROM `Usuario` WHERE `idUsuario` = $id;";
+        $sql = "SELECT * FROM `Usuario` WHERE `id` = $id;";
         return DbController::query($sql);
     }
 
     // Read (Retrieve all users)
     static function getAllUsuarios() {
         $sql = "SELECT * FROM `Usuario`;";
+        return DbController::query($sql);
+    }
+
+    // Format human readible
+    static function showAllUsuarios() {
+        $sql = "SELECT Usuario.id, Usuario.nome, Usuario.senha, Funcao.nome AS nomeFuncao
+            FROM Usuario
+            INNER JOIN Funcao ON Usuario.idFuncao = Funcao.id;";
         return DbController::query($sql);
     }
 
@@ -60,6 +68,11 @@ class Usuario {
         return password_verify($senha, $row -> senha) 
             ? new Usuario($row -> nome, $row -> idFuncao) 
             : null;
+    }
+
+    static function getAllProfessores(){
+        $sql = "SELECT * FROM `Usuario` where idFuncao = 2;";
+        return DbController::query($sql);
     }
 
 
