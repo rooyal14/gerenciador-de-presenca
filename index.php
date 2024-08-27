@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <title>Login</title>  
 </head>
 <body>
     <?php
@@ -19,7 +21,7 @@
         $usuario = Usuario::login($id, $senha);
         switch ($usuario -> idFuncao) {
             case 1:
-                header("Location: http://localhost/gerenciador-de-presenca/admin"); 
+                header("Location: http://localhost/gerenciador-de-presenca/pages/admin"); 
                 exit();
                 break;
             case 2:
@@ -36,14 +38,14 @@
     } else {
         // Exibir o formulário de cadastro
         ?>
-        <div class="login" style="margin: 40px;padding: 10px; border: 1px solid black; width: 260px;">
-            <h2>Login</h2>
-            <form method="POST" action="login.php">
-                <label for="id">Id:</label>
-                <input type="text" name="id" required><br>
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" required><br>
-                <input type="submit" value="Login">
+        <div class="tela-login">
+            <h1>Login</h1>
+            <form method="POST" action="index.php">
+                <input class='text-input' type="text" placeholder='Matricula' name="id">
+                <br><br>
+                <input class='text-input' type="password" placeholder='Senha' name="senha">
+                <br><br>
+                <input class='btn-input' type="submit" value="Login">
             </form>
         </div>
         

@@ -3,39 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <style>
-        table, th, td {
-        margin: 10px;
-        padding: 5px;
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
 
-        .form {
-            border: 1px solid black;
-            width: 400px;
-            height: 200px;
-            padding: 10px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-left: -200px;
-            margin-top: -100px;
-            background-color: white;
-            display: none;
-            flex-flow: column wrap;
-            justify-content: flex-start;
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 
-        }
-    </style>
-    <script>
-        function popupAdicionarUsuario() {
-            const form = document.getElementsByClassName('form')[0];
-            form.style.display = "flex";
-            
-        }
-    </script>
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="index.css">
+
+    <title>Adm Home page</title>
 </head>
 <body>
     <?php
@@ -68,6 +43,15 @@
     } else {
         // Exibir o formulário de cadastro
         ?>
+        <header class="header">
+          <nav class="nav container">
+             <div class="nav__data">
+                <a href="#" class="nav__logo">
+                   <i class="ri-planet-line"></i> Gerenciador de Aulas
+                </a>                
+             </div> 
+          </nav>
+       </header>
         <form method="POST" action="index.php" class='form'>
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" required><br>
