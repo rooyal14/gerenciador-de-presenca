@@ -9,16 +9,24 @@
 </head>
 <body>
     <?php
+    ini_set('display_errors', '1');
+    ini_set('display_startup_errors', '1');
+    error_reporting(E_ALL);
     require_once("dbConn.php");
     require_once("models/usuario.php");
-    //Usuario::createUsuario(new Usuario('admin','1','123'));
+    // Usuario::createUsuario(new Usuario('admin', 1, '', '', '', '', '123'));
+
     // Verificar se o formulário foi submetido
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         // Receber dados do formulário
-        $id = $_POST['id'] ?? '';
-        $senha = $_POST['senha'] ?? '';
+        // echo $id = $_POST['id'] ?? '';
+        // echo $senha = $_POST['senha'] ?? '';
         $usuario = Usuario::login($id, $senha);
+        if ($usuario) {
+            session_start();
+            $_SESSION['idUsuario'] = $usuario -> id;
+        }
         switch ($usuario -> idFuncao) {
             case 1:
                 header("Location: http://localhost/gerenciador-de-presenca/pages/admin"); 
@@ -28,10 +36,11 @@
                 echo 'Tela professor';
                 break;
             case 3:
-                echo 'Tela aluno';
+                header("Location: http://localhost/gerenciador-de-presenca/pages/aluno"); 
+                exit();
                 break;
             default:
-                echo 'Função inválida';
+                echo 'Login inválido';
         }
     
 
