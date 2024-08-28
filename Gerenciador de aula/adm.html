@@ -8,8 +8,8 @@
       <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="style/adm_style.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <link rel="stylesheet" href="style/adm_style.css">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
       <title>Adm Home page</title>
@@ -30,8 +30,8 @@
         <section class="main_box">
          <div class="aluno__box">
             <div class="container_data">
-               <p>Aluno</p>
-               <button class="btn_cadastrar">Cadastrar</button>
+               <h7>Aluno</h7>
+               <button class="btn_cadastrar" id="openModalBtn_aluno">Cadastrar</button>
             <br>
             </div>
             <div class="container_table">
@@ -95,8 +95,8 @@
          
          <div class="professor__box">
            <div class="container_data">
-               <p>Professor</p>
-               <button class="btn_cadastrar">Cadastrar</button>
+               <h7>Professor</h7>
+               <button class="btn_cadastrar" id="openModalBtn_professor">Cadastrar</button>
             <br>
             </div>
             <div class="container_table">
@@ -160,8 +160,8 @@
          
          <div class="materia__box">
             <div class="container_data">
-               <p>Matéria</p>
-               <button class="btn_cadastrar">Cadastrar</button>
+               <h7>Matéria</h7>
+               <button class="btn_cadastrar" id="openModalBtn_materia">Cadastrar</button>
             </div>
             <div class="container_table">
                <table id="listar-mateia" class="table table-secondary table-striped">
@@ -207,7 +207,98 @@
         </section>
       </main> 
 
-    <!--MAIN JS-->
-    <script src="JS/adm.js"></script>
-</body>
+      <!----------- Modal ---------------->
+      <div id="aluno_modal" class="modal">
+         <div class="modal-content">
+            <span class="close_aluno">&times;</span>
+            <h2>Cadastrar Novo Aluno</h2>
+            <form class="form_aluno">
+               <label for="name">Nome do Aluno:</label>
+               <input type="text" id="name" name="name" required>
+               
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email" required>
+
+               <label for="senha">Senha provisória:</label>
+               <input type="text" id="senha" name="senha" required>
+               
+               <label for="entryDate">Data de Entrada:</label>
+               <input type="date" id="entryDate" name="entryDate" required>
+               
+               <label for="birthday">Data de Aniversário:</label>
+               <input type="date" id="birthday" name="birthday" required>
+               <br>
+               <button type="submit" class="btn_cadastrar">Cadastrar</button>
+            </form>
+         </div>
+      </div>
+
+      <div id="professor_modal" class="modal">
+         <div class="modal-content">
+            <span class="close_professor">&times;</span>
+            <h2>Cadastrar Novo Professor</h2>
+            <form class="form_professor">
+               <label for="name">Nome do Professor:</label>
+               <input type="text" id="name" name="name" required>
+               
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email" required>
+
+               <label for="senha">Senha provisória:</label>
+               <input type="text" id="senha" name="senha" required>
+               
+               <label for="entryDate">Data de Entrada:</label>
+               <input type="date" id="entryDate" name="entryDate" required>
+               
+               <label for="birthday">Data de Aniversário:</label>
+               <input type="date" id="birthday" name="birthday" required>
+               <br>
+               <button type="submit" class="btn_cadastrar">Cadastrar</button>
+            </form>
+         </div>
+      </div>
+
+      <div id="materia_Modal" class="modal">
+         <div class="modal-content">
+            <span class="close_materia">&times;</span>
+            <h2>Cadastrar Nova Matéria</h2>
+            <form class="form_materia">
+               <label for="materiaNome">Nome da Matéria:</label>
+               <input type="text" id="materiaNome" name="materiaNome" required>
+               
+               <label for="cargaHoraria">Carga Horária (em horas):</label>
+               <input type="number" id="cargaHoraria" name="cargaHoraria" step="0.1" required>
+               
+               <label for="periodo">Período:</label>
+               <input type="text" id="periodo" name="periodo" required>
+               
+               <label for="curso">Curso:</label>
+               <input type="text" id="curso" name="curso" required>
+               
+               <label for="diaSemana">Dia da Semana:</label>
+               <select id="diaSemana" name="diaSemana" required>
+                     <option value="segunda">Segunda-feira</option>
+                     <option value="terca">Terça-feira</option>
+                     <option value="quarta">Quarta-feira</option>
+                     <option value="quinta">Quinta-feira</option>
+                     <option value="sexta">Sexta-feira</option>
+                     <option value="sabado">Sábado</option>
+               </select>
+               
+               <label for="turno">Turno:</label>
+               <select id="turno" name="turno" required>
+                     <option value="matutino">Matutino</option>
+                     <option value="vespertino">Vespertino</option>
+                     <option value="noturno">Noturno</option>
+                     <option value="integral">Integral</option>
+               </select>
+               
+               <button type="submit" class="btn_cadastrar">Cadastrar</button>
+            </form>
+         </div>
+      </div>
+
+      <!--MAIN JS-->
+      <script src="JS/adm.js"></script>
+    </body>
 </html>
