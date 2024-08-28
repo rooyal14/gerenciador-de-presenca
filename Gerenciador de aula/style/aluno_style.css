@@ -56,13 +56,6 @@ ul {
 a {
   text-decoration: none;
 }
-
-/*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
-}
-
 /*=============== HEADER ===============*/
 .header {
   position: sticky;
@@ -96,16 +89,26 @@ a {
   font-size: 1.25rem;
 }
 /*=============== MAIN ===============*/
-.main{
-  margin-top: 70px;
-  margin-right: 25px;
+.main {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
 }
-.container{
-  margin-left: 1.8rem;
+
+.main_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens dentro da caixa */
+  max-width: 90%; /* Limita a largura máxima da caixa principal */
+}
+
+.container {
   display: flex;
   flex-direction: column;
   row-gap: 1rem; 
   font-weight: var(--font-semi-bold);
+  width: 100%; /* Faz com que a container ocupe toda a largura disponível */
+  max-width: 1200px; /* Limita a largura máxima para manter a responsividade */
 }
 .container_table{
   justify-content: space-between;
@@ -116,4 +119,20 @@ a {
   border-radius: 5px;
   transition: background .3s;
   cursor: pointer;
+}
+.btn_inscrever:hover{
+  background-color: #33B8C3;
+  color: black;
+}
+.btn_inscrever:active{
+  color: black;
+  background-color: #2B568C;
+}
+.btn_deletar:hover{
+  background-color: #D94033;
+  color: #fff;
+}
+.btn_deletar:active{
+  color: black;
+  background-color: #2B568C
 }
