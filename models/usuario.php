@@ -101,6 +101,52 @@ class Usuario {
         return DbController::query($sql);
     }
 
+    static function cadastrarUsuarioEmMateria($idAluno, $idMateria) {
+        $dataMatricula = date('Y-m-d');
+        $sql = "INSERT INTO `AlunoMateria` (`idAluno`, `idMateria`, `dataMatricula`) 
+                VALUES ('$idAluno', '$idMateria', '$dataMatricula');";
+        return DbController::query($sql);
+    }
+
+    static function obterMateriasCursadasPorUsuario($idAluno) {
+        $sql = "SELECT DISTINCT Materia.id, Materia.nome, Usuario.nome AS nomeProfessor, Materia.cargaHoraria, Materia.periodo, DiaSemana.nome AS nomeDiaSemana, Curso.nome AS nomeCurso, Turno.nome AS nomeTurno
+                FROM AlunoMateria
+                INNER JOIN Materia ON AlunoMateria.idMateria = Materia.id
+                INNER JOIN Usuario ON Materia.idProfessor = Usuario.id
+                INNER JOIN DiaSemana ON Materia.idDiaSemana = DiaSemana.id
+                INNER JOIN Curso ON Materia.idCurso = Curso.id
+                INNER JOIN Turno ON Materia.idTurno = Turno.id
+                WHERE AlunoMateria.idAluno = $idAluno;";
+        return DbController::query($sql);
+    }
+
+    static function obterMateriasNaoCursadasPorUsuario($idAluno) {
+        $sql = "SELECT Materia.id, Materia.nome, Usuario.nome AS nomeProfessor, Materia.cargaHoraria, Materia.periodo, DiaSemana.nome AS nomeDiaSemana, Curso.nome AS nomeCurso, Turno.nome AS nomeTurno
+                FROM Materia
+                INNER JOIN Usuario ON Materia.idProfessor = Usuario.id
+                INNER JOIN DiaSemana ON Materia.idDiaSemana = DiaSemana.id
+                INNER JOIN Curso ON Materia.idCurso = Curso.id
+                INNER JOIN Turno ON Materia.idTurno = Turno.id
+                WHERE Materia.id NOT IN (
+                    SELECT idMateria 
+                    FROM AlunoMateria 
+                    WHERE idAluno = $idAluno
+                );";
+        return DbController::query($sql);
+    }
+
+    static function desinscreverAlunoDeMateria($idAluno, $idMateria) {
+        $sql = "DELETE FROM `AlunoMateria` 
+                WHERE `idAluno` = '$idAluno' 
+                AND `idMateria` = '$idMateria';";
+        return DbController::query($sql);
+    }
+
+
+
+
+
+
 
 }
 

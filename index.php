@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./login.css">
     <title>Login</title>  
 </head>
 <body>
@@ -14,14 +14,16 @@
     error_reporting(E_ALL);
     require_once("dbConn.php");
     require_once("models/usuario.php");
-    // Usuario::createUsuario(new Usuario('admin', 1, '', '', '', '', '123'));
+    // $x = new Usuario('admin', 1, '', '', '', '', '123');
+    // Usuario::createUsuario($x);
+    // print_r($x);
 
     // Verificar se o formulário foi submetido
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         // Receber dados do formulário
-        // echo $id = $_POST['id'] ?? '';
-        // echo $senha = $_POST['senha'] ?? '';
+        $id = $_POST['id'] ?? '';
+        $senha = $_POST['senha'] ?? '';
         $usuario = Usuario::login($id, $senha);
         if ($usuario) {
             session_start();

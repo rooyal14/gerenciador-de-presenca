@@ -6,9 +6,11 @@
 
     <!--=============== REMIXICONS ===============-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="admin.css">
 
     <title>Adm Home page</title>
 </head>
@@ -86,7 +88,8 @@
              </div> 
           </nav>
        </header>
-        <div class="crud-usuarios" style="margin: 40px;padding: 10px; border: 1px solid black; width: 920px;">
+        <div class="crud-usuarios" style="margin: 40px;padding: 10px; width: 920px;">
+            <h2>Cadastro de Usuários</h2>
             <form method="POST" action="index.php" class='form-usuario'>
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" required><br>
@@ -120,9 +123,10 @@
                 </select>
                 <input type="submit" value="Cadastrar">
             </form>
+            <br>
             <h2>Usuarios</h2>
-            <button onclick='popupAdicionarUsuario()'>Adicionar +</button>
-            <table>
+            <!-- <button onclick='popupAdicionarUsuario()'>Adicionar +</button> -->
+            <table class="table table-striped table">
                 <thead>
                     <td>Id</td>
                     <td>Nome</td>
@@ -131,6 +135,7 @@
                     <td>Telefone</td>
                     <td>Data Ingresso</td>
                     <td>Data Nascimento</td>
+                    <td style="width: 20%;">Ações</td>
                 </thead>
                 <tbody>
                 <?php
@@ -150,13 +155,13 @@
                                 <input type="hidden" name="_method" value="PUT"> 
                                 <input type="hidden" name="entity" value="Usuario">
                                 <input type="hidden" name="id" value="<?= $row -> id?>">
-                                <input type="submit" value="I">
+                                <input type="submit" value="I" class="btn btn-warning">
                             </form>
                             <form action="index.php" method="POST" class='form-btn-delete'>
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="entity" value="Usuario">
                                 <input type="hidden" name="id" value="<?= $row -> id?>">
-                                <input type="submit" value="X">
+                                <input type="submit" value="X" class="btn btn-danger">
                             </form>
                         </td>
                     </tr>
@@ -167,7 +172,9 @@
             </table>
         </div>
         <br>
-        <div class="crud-materias" style="margin: 40px;padding: 10px; border: 1px solid black; width: 800px;">
+        
+        <div class="crud-materias" style="margin: 40px;padding: 10px; width: 800px;">
+        <h2>Cadastro de Materias</h2>
         <form method="POST" action="index.php" class='form-materias'>
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome"required><br>
@@ -221,9 +228,10 @@
                 </select><br>
                 <input type="submit" value="Cadastrar">
             </form>
+            <br>
             <h2>Materias</h2>
-            <button onclick='popupAdicionarMateria()'>Adicionar +</button>
-            <table>
+            <!-- <button onclick='popupAdicionarMateria()'>Adicionar +</button> -->
+            <table class="table table-striped table">
                 <thead>
                     <td>Id</td>
                     <td>Nome</td>
@@ -233,6 +241,7 @@
                     <td>Dia</td>
                     <td>Curso</td>
                     <td>Turno</td>
+                    <td style="width: 20%;">Ações</td>
 
                 </thead>
                 <tbody>
@@ -254,13 +263,13 @@
                                 <input type="hidden" name="_method" value="PUT">
                                 <input type="hidden" name="entity" value="Materia">
                                 <input type="hidden" name="id" value="<?= $row -> id?>">
-                                <input type="submit" value="I">
+                                <input type="submit" value="I" class="btn btn-warning">
                             </form>
                             <form action="index.php" method="POST" class='form-btn-delete'>
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="entity" value="Materia">
                                 <input type="hidden" name="id" value="<?= $row -> id?>">
-                                <input type="submit" value="X">
+                                <input type="submit" value="X" class="btn btn-danger">
                             </form>
                         </td>
                     </tr>
