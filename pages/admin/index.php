@@ -17,6 +17,7 @@
     require_once("../../dbConn.php");
     require_once("../../models/usuario.php");
     require_once("../../models/materia.php");
+    
     // Verificar se o formulário foi submetido
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         switch($_POST['_method']){

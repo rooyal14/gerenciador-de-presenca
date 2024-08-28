@@ -11,7 +11,7 @@
     <?php
     require_once("dbConn.php");
     require_once("models/usuario.php");
-
+    //Usuario::createUsuario(new Usuario('admin','1','123'));
     // Verificar se o formulário foi submetido
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
