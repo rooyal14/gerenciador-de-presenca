@@ -98,9 +98,9 @@ a {
 
 /*=============== MAIN ===============*/
   .main{
-    margin-top: 70px;
-    margin-right: 25px;
-
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
   }
   .aluno__box, .professor__box, .materia__box{
     margin-left: 1.8rem;
