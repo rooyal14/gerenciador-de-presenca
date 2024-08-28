@@ -30,7 +30,7 @@ closeBtn_professor.onclick = function(){
 // ---------- modal das matérias ----------------------
 const materia_Modal= document.getElementById("materia_Modal");
 const openModalBtn_materia= document.getElementById("openModalBtn_materia");
-const close_materia= document.getElementsByClassName("close_materia");
+const close_materia= document.getElementsByClassName("close_materia")[0];
 
 openModalBtn_materia.onclick= function(){
   materia_Modal.style.display = "block";
